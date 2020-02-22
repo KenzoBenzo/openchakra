@@ -12,6 +12,7 @@ import EffectsPanel from './styles/EffectsPanel'
 import ChildrenInspector from '../ChildrenInspector'
 import ParentInspector from '../ParentInspector'
 import CustomPropsPanel from './CustomPropsPanel'
+import CustomThemePanel from './styles/CustomThemePanel'
 
 interface Props {
   isRoot: boolean
@@ -69,6 +70,12 @@ const StylesPanel: React.FC<Props> = ({
         enableHues
       />
     </AccordionContainer>
+
+    {isRoot && (
+      <AccordionContainer title="Custom theme">
+        <CustomThemePanel />
+      </AccordionContainer>
+    )}
 
     {!isRoot && (
       <>
